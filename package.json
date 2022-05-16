@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "watch:sass": "sass --watch src/sass:public/css",
-    "build:sass": "sass src/sass:public/css",
+    "watch:sass": "sass --watch src/sass:docs/css",
+    "build:sass": "sass src/sass:docs/css",
     "watch:eleventy": "env-cmd eleventy --serve",
     "build:eleventy": "env-cmd eleventy",
     "start": "npm-run-all build:sass --parallel watch:*",
