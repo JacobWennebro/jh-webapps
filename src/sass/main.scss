@@ -1,0 +1,19 @@
+// External
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap');
+
+// Extras
+@import './extras/theme.scss';
+@import './extras/components.scss';
+
+// Apps
+@import './app-styles/link-in-bio.scss';
+
+*,*:before,*:after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    box-sizing: inherit;
+}
