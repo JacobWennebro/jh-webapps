@@ -1,6 +1,9 @@
 body[data-app=link-in-bio] .app {
   position: relative;
   height: 100vh;
+  max-width: 700px;
+  margin: auto;
+  user-select: none;
 }
 body[data-app=link-in-bio] .app-header {
   position: absolute;
@@ -103,7 +106,7 @@ body[data-app=link-in-bio] .app-content-release__inner-info__centerer h6 {
 body[data-app=link-in-bio] .app-content-release__inner-info__centerer p {
   margin: 0;
   font-weight: 500;
-  color: #A0A0A0;
+  color: #a0a0a0;
   font-size: 0.65rem;
   margin-top: 0.15rem;
   text-transform: uppercase;

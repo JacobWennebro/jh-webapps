@@ -1,135 +1,141 @@
-body[data-app=link-in-bio] {
-    .app {
-        position: relative;
-        height: 100vh;
+body[data-app="link-in-bio"] {
+  .app {
+    position: relative;
+    height: 100vh;
+    max-width: 700px;
+    margin: auto;
+    user-select: none;
 
-        &-header {
+    &-header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      &-logo {
+        margin: 1rem;
+        width: 2rem;
+      }
+    }
+
+    &-hero {
+      position: relative;
+      width: 100%;
+      max-height: 100vh;
+      height: auto;
+      z-index: -1;
+      overflow: hidden;
+
+      &__dimmer {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        z-index: 1;
+        background: rgb(33, 32, 32);
+        background: linear-gradient(
+          0deg,
+          rgba(33, 32, 32, 1) 6%,
+          rgba(0, 0, 0, 0) 95%
+        );
+      }
+
+      img {
+        width: 100%;
+        opacity: 0.6;
+      }
+    }
+
+    &-content {
+      transform: translateY(-35px);
+      width: 85%;
+      margin: auto;
+
+      &-socials {
+        text-align: center;
+        ul {
+          padding: 0;
+          margin: 0;
+          list-style: none;
+          li {
+            display: inline-block;
+            margin: 0 1rem;
+            font-size: 24px;
+          }
+        }
+      }
+
+      &-buttons {
+        width: 100%;
+        margin: auto;
+      }
+    }
+
+    &-content-release {
+      width: 100%;
+      margin: 1rem auto;
+      &__inner {
+        display: grid;
+        column-gap: 1rem;
+        grid-template-columns: 64px auto auto;
+        background-color: rgba(70, 70, 70, 0.8);
+        padding: 0.5rem;
+        border-radius: 10px;
+        &-playbtn {
+          border-radius: 2px;
+          overflow: hidden;
+          position: relative;
+          &__overlay {
             position: absolute;
             top: 0;
             left: 0;
+            background-color: rgba(70, 70, 70, 0.8);
             width: 100%;
-            text-align: center;
-            &-logo {
-                margin: 1rem;
-                width: 2rem;
+            height: 100%;
+            font-size: 1.5rem;
+            i {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
             }
+          }
+          img {
+            display: block;
+          }
         }
-
-        &-hero {
+        &-info {
+          &__centerer {
             position: relative;
-            width: 100%;
-            max-height: 100vh;
-            height: auto;
-            z-index: -1;
-            overflow: hidden;
-            
-            &__dimmer {
-                position: absolute;
-                height: 100%;
-                width: 100%;
-                z-index: 1;
-                background: rgb(33,32,32);
-                background: linear-gradient(0deg, rgba(33,32,32,1) 6%, rgba(0,0,0,0) 95%);
-            }
+            top: 50%;
+            transform: translateY(-50%);
 
-            img {
-                width: 100%;
-                opacity: 0.6;
+            h6 {
+              font-size: 1rem;
+              margin: 0;
+              font-weight: 700;
             }
+            p {
+              margin: 0;
+              font-weight: 500;
+              color: #a0a0a0;
+              font-size: 0.65rem;
+              margin-top: 0.15rem;
+              text-transform: uppercase;
+            }
+          }
         }
-
-        &-content {
-            transform: translateY(-35px);
-            width: 85%;
-            margin: auto;
-
-            &-socials {
-                text-align: center;
-                ul {
-                    padding: 0;
-                    margin: 0;
-                    list-style: none;
-                    li {
-                        display: inline-block;
-                        margin: 0 1rem;
-                        font-size: 24px;
-                    }
-                }
-            }
-
-            &-buttons {
-                width: 100%;
-                margin: auto;
-            }
-
-        }
-
-        &-content-release {
-            width: 100%;
-            margin: 1rem auto;
-            &__inner {
-                display: grid;
-                column-gap: 1rem;
-                grid-template-columns: 64px auto auto;
-                background-color: rgba(70, 70, 70, 0.8);
-                padding: 0.5rem;
-                border-radius: 10px;
-                &-playbtn {
-                    border-radius: 2px;
-                    overflow: hidden;
-                    position: relative;
-                    &__overlay {
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        background-color: rgba(70, 70, 70, 0.8);
-                        width: 100%;
-                        height: 100%;
-                        font-size: 1.5rem;
-                        i {
-                            position: absolute;
-                            top: 50%;
-                            left: 50%;
-                            transform: translate(-50%, -50%)
-                        }
-                    }
-                    img {
-                        display: block;
-                    }
-                }
-                &-info {
-                    &__centerer {
-                        position: relative;
-                        top: 50%;
-                        transform: translateY(-50%);
-
-                        h6 {
-                            font-size: 1rem;
-                            margin: 0;
-                            font-weight: 700;
-                        }
-                        p {
-                            margin: 0;
-                            font-weight: 500;
-                            color: #A0A0A0;
-                            font-size: 0.65rem;
-                            margin-top: 0.15rem;
-                            text-transform: uppercase;
-                        }
-                    }
-                }
-            }
-        }
-
-        footer {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            background-color: #212020;
-            color: #777;
-            font-weight: 500;
-            text-align: center;
-            font-size: 0.75rem;
-        }
+      }
     }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #212020;
+      color: #777;
+      font-weight: 500;
+      text-align: center;
+      font-size: 0.75rem;
+    }
+  }
 }

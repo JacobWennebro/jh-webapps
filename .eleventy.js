@@ -1,5 +1,6 @@
 module.exports = eleventyConfig => {
 
+    eleventyConfig.addPassthroughCopy("./src/img");
 
     return {
         dir: {

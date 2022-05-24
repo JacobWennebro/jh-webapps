@@ -3,7 +3,8 @@ title: My page title
 layout: "linkinbio.ejs"
 ---
 
-<a href="#"><button>Talk A'Boat Podcast</button></a>
-<a href="#"><button>Bookings</button></a>
-<a href="#"><button>Merchandise</button></a>
-<a href="#"><button>Grateful Studios</button></a>
+<% for(const link of Links) { %>
+    <a target="_blank" href="<%= link.href %>"><button>
+            <%= link.name %>
+        </button></a>
+    <% } %>

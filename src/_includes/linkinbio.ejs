@@ -1,33 +1,36 @@
 ---
-    data: Spotify
+data: Spotify
 ---
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        <%= (Spotify.albumType === "single" && Spotify.trackAmount > 1) || Spotify.albumType === "album" ? (
+        <%= (Spotify.albumType==="single" && Spotify.trackAmount> 1) || Spotify.albumType === "album" ? (
             `Listen to my latest ${Spotify.albumType !== "album" ? "EP" : "album"} "${Spotify.albumName}"!`
-        ) : (
-            `Joe Hanzen - ${Spotify.albumName} ${Spotify.featuringArtists.length ? `ft. ${Spotify.featuringArtists.join(',')}` : ""} | OUT NOW!` 
-        ) %>
+            ) : (
+            `Joe Hanzen - ${Spotify.albumName} ${Spotify.featuringArtists.length ? `ft.
+            ${Spotify.featuringArtists.join(',')}` : ""} | OUT NOW!`
+            ) %>
     </title>
     <script src="https://unpkg.com/akar-icons-fonts"></script>
     <link href="./css/main.css" type="text/css" rel="stylesheet">
 </head>
+
 <body data-app="link-in-bio" data-theme="dark">
-    
+
     <div class="app">
 
         <header class="app-header">
-            <img class="app-header-logo" src="./img/logo.svg"/>            
+            <img class="app-header-logo" src="./img/logo.svg" />
         </header>
 
         <div class="app-hero">
             <div class="app-hero__dimmer"></div>
-            <img src="./img/ob-hero.jpg"/>
+            <img src="./img/ob-hero.jpg" />
         </div>
 
         <div class="app-content">
@@ -35,6 +38,7 @@
             <div class="app-content-socials">
                 <ul>
                     <li><a target="_blank" href="https://joeha.nz/instagram"><i class="ai-instagram-fill"></i></a></li>
+                    <li><a target="_blank" href="https://joeha.nz/spotify"><i class="ai-spotify-fill"></i></a></li>
                     <li><a target="_blank" href="https://joeha.nz/youtube"><i class="ai-youtube-fill"></i></a></li>
                     <li><a target="_blank" href="https://joeha.nz/twitter"><i class="ai-twitter-fill"></i></a></li>
                     <li><a target="_blank" href="https://joeha.nz/snapchat"><i class="ai-snapchat-fill"></i></a></li>
@@ -43,32 +47,37 @@
 
             <div class="app-content-release">
                 <span class="category-text">Latest Release</span>
-                <div class="app-content-release__inner">
+                <a href="https://distrokid.com/hyperfollow/joehanzen/ordinary-boy" class="app-content-release__inner">
                     <div class="app-content-release__inner-playbtn">
                         <div class="app-content-release__inner-playbtn__overlay">
                             <i class="ai-play"></i>
                         </div>
-                        <img src="<%= Spotify.coverImageSrc%>"/>
+                        <img src="<%= Spotify.coverImageSrc%>" />
                     </div>
                     <div class="app-content-release__inner-info">
                         <div class="app-content-release__inner-info__centerer">
-                            <h6><%= Spotify.trackName %></h6>
+                            <h6>
+                                <%= Spotify.trackName %>
+                            </h6>
                             <p>Out Now</p>
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
 
             <div class="app-content-buttons">
-                <span class="category-text">Links</span>
+                <span class="category-text">Other Links</span>
                 <%- content %>
             </div>
 
         </div>
 
+        <!--
         <footer>
-            <p>2022 &copy; Joe Hanzen AB</p>
+            <p>2022 &copy; Joe Hanzen</p>
         </footer>
+        -->
     </div>
 </body>
+
 </html>
