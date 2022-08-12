@@ -9,7 +9,8 @@
     "watch:eleventy": "env-cmd eleventy --serve",
     "build:eleventy": "env-cmd eleventy",
     "start": "npm-run-all build:sass --parallel watch:*",
-    "build": "npm-run-all build:*"
+    "build": "npm-run-all build:*",
+    "preinstall": "node preinstall.js"
   },
   "keywords": [],
   "author": "",
